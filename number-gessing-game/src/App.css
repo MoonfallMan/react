@@ -8,44 +8,68 @@
   }
   
   .App-header {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-  }
-  
-  .Game-container {
-    display:flex;
-    justify-content: center;
-    gap: 400px; /* Space between Guess section and Leaderboard */
+    font-size: 2.2em;
     margin-bottom: 100px;
   }
   
+  .Game-container {
+    display:grid;
+    justify-content: center;
+    gap: 100px; /* Space between Guess section and Leaderboard */
+    margin-bottom: 200px;
+    height: 100%;
+    min-height: 500px; /* Minimum height for the game */
+  }
+  
   .Guess-section {
-    flex-basis: 300px; /* Basis size for Guess Section */
-    padding: 50px;
+    flex-basis: 100px; /* Basis size for Guess Section */
+    height: 300px;
+    padding: 20px; /* Adjust padding as needed */
     border: 2px solid #4A5D70;
     border-radius: 5px;
     position:relative; /* For absolute positioning of Tries */
-    max-height: 100px;
-    overflow-y: auto; /* Enable scroll if more than 15 entries */
-   
+    display:grid ; /* Added for flex layout */
+    align-items: center; /* Align items vertically */
+    gap: 0px; /* Space between elements */
   }
   
+ 
   .Guess-input {
-    width: 90%;
-    padding: 10px;
-    margin-bottom: 10px; /* Space between input and button */
-    background-color: #2C3E50; /* Steel color for input */
+    flex-grow: 1; /* Input takes available space */
+    width: auto;/* Adjusted for flex growth */
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 0; /* Removed bottom margin */
+    background-color: #2C3E50;
     border: none;
     color: white;
     border-radius: 5px;
   }
+  .Guess-and-arrow {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between input and arrow */
+  }
+  .Arrow-section {
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    height:20px; /* Adjust the height as needed */
+    margin-top: 20px; /* Space above the arrow section */
+  }
+
+  .arrow {
+    /* Add any specific styles for the arrow here */
+  }
   
   .Submit-button {
-    width: 90%;
+    width: 50%;
+    margin: 0 auto; /* Center the button */
     background-color: #3A506B;
     color: white;
     border: none;
-    padding: 10px;
+    padding: 20px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;

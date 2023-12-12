@@ -4,9 +4,13 @@ import { FaTrophy } from 'react-icons/fa';
 import leaderboardData from './json.json';
 
 function App() {
-  const [tries, setTries] = useState(0);
+  const [tries, setTries] = useState(3);
   const [guess, setGuess] = useState('');
+  const [numberToGuess] = useState(55)
   const [leaderboard, setLeaderboard] = useState([]);
+  const [guessResult, setGuessResult] = useState('');
+  const [difference, setDifference] = useState(0);
+
 
   useEffect(() => {
     // Assuming leaderboardData is the default export from the JSON file
@@ -15,9 +19,48 @@ function App() {
 
   const handleGuessSubmit = () => {
     // Implement your guess handling logic here
-    setTries(tries + 1);
+    if (parseInt(guess) === numberToGuess) {
+      setTries(tries - 1);
+      setGuessResult('correct');
+      return;
+    }
+    else if (parseInt(guess) > numberToGuess) {
+        var diff = Math.abs(parseInt(guess) - numberToGuess);
+        setDifference(diff);
+        setTries(tries - 1);
+        setGuessResult('high');
+        return;
+    }
+    else {
+        diff = Math.abs(parseInt(guess) - numberToGuess);
+        setDifference(diff);
+        setTries(tries - 1);
+        setGuessResult('low');
+        return;
+    }
+       
   };
 
+  const ArrowIndicator = ({ guessResult }) => {
+    const arrowStyle = {
+      width: 0, 
+      height: 0, 
+      borderLeft: '10px solid transparent',
+      borderRight: '10px solid transparent',
+      margin: 'auto',
+    };
+  
+    if (guessResult === 'correct') {
+      return  null; 
+    } else if (guessResult === 'high') {
+      return <div style={{ ...arrowStyle, borderTop: '20px solid yellow' }}></div>;
+    } else if (guessResult === 'low') {
+      return <div style={{ ...arrowStyle, borderBottom: '20px solid yellow' }}></div>;
+    } else {
+      return null; // No arrow if there's no guess yet
+    }
+  };
+  
   return (
     <div className="App">
       <header className="App-header">
@@ -35,6 +78,7 @@ function App() {
           <button className="Submit-button" onClick={handleGuessSubmit}>
             Submit
           </button>
+          <ArrowIndicator guessResult={guessResult} />
           <div className="Tries-counter">Tries: {tries}</div>
         </div>
         <div className="Leaderboard-trophy">
