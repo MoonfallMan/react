@@ -62,6 +62,7 @@ function App() {
   };
   
   return (
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>,
     <div className="App">
       <header className="App-header">
         How many Pepsi cans would it take to reach the moon?
