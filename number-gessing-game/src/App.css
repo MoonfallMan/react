@@ -11,7 +11,157 @@
     font-size: 2.2em;
     margin-bottom: 100px;
   }
+
+  .Game-container {
+    display: grid;
+    justify-content: center;
+    gap: 50px; /* Adjusted gap */
+    margin-bottom: 50px; /* Adjusted margin */
+    grid-template-columns: 1fr; /* Single column layout */
+  }
   
+  .Guess-section {
+    padding: 20px;
+    border: 5px solid #4A5D70;
+    border-radius: 5px;
+    display: flex; /* Use flex for better control */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center-align items */
+    gap: 30px; /* Space between elements */
+  }
+  
+ 
+  .Guess-input {
+    width: 80%; /* Full width */
+    padding: 15px;
+    font-size: 2em; /* Adjust font size */
+    background-color: #2C3E50;
+    border: none;
+    color: white;
+    border-radius: 5px;
+  }
+  .Guess-and-arrow {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between input and arrow */
+  }
+  .Arrow-section {
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    height:20px; /* Adjust the height as needed */
+    margin-top: 20px; /* Space above the arrow section */
+  }
+
+  .arrow {
+    /* Add any specific styles for the arrow here */
+  }
+  
+  .Submit-button {
+    width: 80%;
+    margin: 0 auto; /* Center the button */
+    background-color: #3A506B;
+    color: white;
+    border: none;
+    padding: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .Submit-button:hover {
+    background-color: #5C7EA1;
+  }
+  
+  .Tries-counter {
+
+    bottom: 0; /* Position below the guess section */
+    left: 50%;
+    transform: translateX(-50%);
+    color: #4A90E2; /* A shade of blue for the tries counter */
+    font-size: large;
+  }
+  
+  .Leaderboard-trophy {
+    flex-basis: 300px; /* Basis size for Leaderboard Section */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .Leaderboard {
+    border: 2px solid #4A5D70;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px; /* Space between leaderboard and trophy section */
+    max-height: 500px; /* Maximum height for leaderboard */
+    overflow-y: auto; /* Enable scroll if more than 15 entries */
+  }
+  
+  .Leaderboard h2 {
+    margin-bottom: 10px;
+  }
+  
+  .Leaderboard-entry {
+    margin-bottom: 5px;
+  }
+  
+  .Trophy-section {
+    flex-grow: 1; /* Allows the trophy section to fill the space */
+    border: 2px solid #4A5D70;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .Trophy-icon {
+    width: 50px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .Footer {
+    margin-top: auto; /* Pushes the footer to the bottom of the viewport */
+    padding: 20px 0;
+    font-size: 0.8em;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .Game-container {
+      gap: 30px;
+      padding: 10px;
+    }
+  
+    .Guess-section {
+      padding: 10px;
+    }
+    .Guess-input {
+        font-size: 0.8em; /* Smaller font size for mobile */
+      }
+    .Leaderboard-trophy {
+      flex-basis: auto; /* Allows sections to fit content on smaller screens */
+      width: 100%;
+      
+    }
+  
+  }
+  .App {
+    text-align: center;
+    background-color: #1E2A45; /* Dark blue/steel background */
+    color: white;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    padding: 20px; /* Padding around the app for some space */
+  }
+  
+  .App-header {
+    font-size: 2.2em;
+    margin-bottom: 100px;
+  }
+
   .Game-container {
     display: grid;
     justify-content: center;
